@@ -5,10 +5,13 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.*
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.appestudo.ui.screens.marcacao.TelaMarcacao
+import com.example.appestudo.ui.screens.vacina.ProntuariopetInfoScreen
 import com.example.appestudo.ui.theme.AppEstudoTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,6 +35,15 @@ class MainActivity : ComponentActivity() {
                     composable("marcacao") {
                         TelaMarcacao(navController)
                     }
+
+                    composable(
+                        route = "prontuario/{petId}",
+                        arguments = listOf(navArgument("petId") { type = NavType.StringType })
+                    ) { backStackEntry ->
+                        val petId = backStackEntry.arguments?.getString("petId")!!
+                        ProntuariopetInfoScreen(petInfoId = petId, navController = navController)
+                    }
+
                 }
             }
         }

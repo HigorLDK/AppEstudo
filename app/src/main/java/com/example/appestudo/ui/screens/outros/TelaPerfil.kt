@@ -1,4 +1,4 @@
-package com.example.appestudo.ui.screens.vacina
+package com.example.appestudo.ui.screens.outros
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -15,15 +15,16 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun TelaB(navController: NavController) {
+fun TelaPerfil(navController: NavController) {
+
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Blue),
+            .background(Color.Red),
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "B",
+            text = "C",
             fontSize = 48.sp,
             fontWeight = FontWeight.Medium,
             color = Color.White
@@ -33,6 +34,6 @@ fun TelaB(navController: NavController) {
 
 @Preview(showBackground = true)
 @Composable
-fun PreviewTelaB() {
-    TelaB(navController = rememberNavController())
+fun PreviewTelaPerfil() {
+    TelaPerfil(navController = rememberNavController())
 }

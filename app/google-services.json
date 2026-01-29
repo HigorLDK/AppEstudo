@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "372239482820",
+    "project_id": "appestudo-ec003",
+    "storage_bucket": "appestudo-ec003.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372239482820:android:8913cb33a168295da16e91",
+        "android_client_info": {
+          "package_name": "com.example.appestudo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMTPCShxpEfWCWfdJ0z-pJ8ItOTzEmFR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
