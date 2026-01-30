@@ -1,4 +1,4 @@
-package com.example.appestudo.ui.screens.vacina
+package com.example.appestudo.ui.screens.infoPet.prontuario
 
 import androidx.lifecycle.ViewModel
 import com.example.appestudo.data.model.PetInfo

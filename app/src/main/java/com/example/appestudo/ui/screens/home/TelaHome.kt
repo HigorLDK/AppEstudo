@@ -71,7 +71,7 @@ fun TelaHome(
             horizontalArrangement = Arrangement.SpaceEvenly,
         ) {
             TopActionButton("Marcação", Icons.AutoMirrored.Filled.List) {
-                navController.navigate("marcacao")
+                navController.navigate("consulta")
             }
             TopActionButton("Produtos", Icons.Default.DateRange) {}
             TopActionButton("Cuidados", Icons.Default.FavoriteBorder) {}
@@ -99,7 +99,7 @@ fun TelaHome(
             contentPadding = PaddingValues(bottom = 16.dp)
         ) {
             items(pets) { pet ->
-                PetCard(pet, onClick = {navController.navigate("prontuario/${pet.id}")})
+                PetCard(pet, onClick = {navController.navigate("infopet/${pet.id}")})
                 Spacer(modifier = Modifier.height(12.dp))
             }
 

@@ -1,6 +1,7 @@
-package com.example.appestudo.ui.screens.marcacao
+package com.example.appestudo.ui.screens.infoPet
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -35,14 +36,17 @@ import com.example.appestudo.ui.theme.Yellow10
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TelaMarcacao(navController: NavController) {
+fun TelaInfoPet(
+    petInfoId: String,
+    navController: NavController
+) {
 
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
                     Text(
-                        text = "Marcação",
+                        text = "Informações",
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Medium
                     )
@@ -71,23 +75,22 @@ fun TelaMarcacao(navController: NavController) {
         ) {
             Spacer(modifier = Modifier.height(16.dp))
 
-            ItemCard("Consulta")
-            ItemCard("Cirurgias")
-            ItemCard("Vacinação")
-            ItemCard("Banho e Tosa")
-            ItemCard("Cancelamento")
+            ItemCard("Vacinas", onClick = {navController.navigate("consulta")})
+            ItemCard("Controle Parasitário", onClick = {})
+            ItemCard("Prontuário", onClick = {navController.navigate("prontuario/${petInfoId}")})
         }
     }
 }
 
 
 @Composable
-fun ItemCard(text: String) {
+fun ItemCard(text: String, onClick: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth(0.9f)
             .height(84.dp)
-            .padding(vertical = 8.dp),
+            .padding(vertical = 8.dp)
+            .clickable { onClick() },
         shape = RoundedCornerShape(16.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
 
@@ -107,6 +110,6 @@ fun ItemCard(text: String) {
 
 @Preview
 @Composable
-fun PreviewTelaMarcacao(){
-    TelaMarcacao(navController = rememberNavController())
+fun PreviewTelaInfoPet(){
+    TelaInfoPet(petInfoId = "",navController = rememberNavController())
 }
