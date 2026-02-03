@@ -44,7 +44,11 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.core.splashscreen)
+
     implementation("androidx.navigation:navigation-compose:2.9.7")
+    implementation(libs.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
 
     // Import the Firebase BoM
     implementation(platform(libs.firebase.bom))
@@ -62,6 +66,8 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.googleid)
+    implementation(libs.androidx.appcompat)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

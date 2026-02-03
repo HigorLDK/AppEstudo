@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AppEstudo</string>
+    <string name="default_web_client_id">372239482820-1b9d8udnv4u7s92fo7ctcbbl52j3b4i8.apps.googleusercontent.com</string>
 
 </resources>

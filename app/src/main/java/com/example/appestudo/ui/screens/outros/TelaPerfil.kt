@@ -3,6 +3,7 @@ package com.example.appestudo.ui.screens.outros
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -13,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.google.firebase.auth.FirebaseAuth
 
 @Composable
 fun TelaPerfil(navController: NavController) {
@@ -23,17 +25,14 @@ fun TelaPerfil(navController: NavController) {
             .background(Color.Red),
         contentAlignment = Alignment.Center
     ) {
-        Text(
-            text = "C",
-            fontSize = 48.sp,
-            fontWeight = FontWeight.Medium,
-            color = Color.White
-        )
-    }
-}
+        Button(onClick = {
+            FirebaseAuth.getInstance().signOut()
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewTelaPerfil() {
-    TelaPerfil(navController = rememberNavController())
+            navController.navigate("main") {
+                popUpTo(0) { inclusive = true }
+            }
+        }) {
+            Text("Sair")
+        }
+    }
 }

@@ -2,19 +2,16 @@
 <resources>
 
     <style name="Theme.AppEstudo" parent="android:Theme.Material.Light.NoActionBar">
-    <item name="android:forceDarkAllowed">false</item>
+        <item name="android:forceDarkAllowed">false</item>
     </style>
 
     <style name="Theme.AppEstudo.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/yellow</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/logo_po</item>
+        <item name="windowSplashScreenIconBackgroundColor">#FFEB3B</item>
         <item name="postSplashScreenTheme">@style/Theme.AppEstudo</item>
-
-        <!-- REMOVE qualquer overlay escuro -->
         <item name="android:forceDarkAllowed">false</item>
-        <item name="android:windowBackground">@color/yellow</item>
-        <item name="android:statusBarColor">#FFEB3B</item>
-        <item name="android:navigationBarColor">#FFEB3B</item>
     </style>
+
 
 </resources>
